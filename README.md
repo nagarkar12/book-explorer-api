@@ -3,7 +3,7 @@
 A simple API built with Flask that allows users to manage a book collection. This includes adding, viewing, and searching books. It also includes JWT-based authentication for user registration and login.
 
 ## Live API
-Hosted on [Render](https://your-render-url.com)
+Hosted on [Render](https://book-explorer-api.onrender.com/)
 
 ## Features
 
