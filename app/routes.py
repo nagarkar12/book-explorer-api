@@ -22,6 +22,9 @@ def get_books():
         "id": b.id,
         "title": b.title,
         "author": b.author,
-        "rating": b.rating
+        "year": b.year,
+        "description": b.description,
+        "genre": b.genre
     } for b in books])
+
 
