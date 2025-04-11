@@ -15,13 +15,13 @@ def add_book():
     db.session.commit()
     return jsonify({"message": "Book added!"}), 201
 
-@app.route('/books', methods=['GET'])
+@app.route("/books", methods=["GET"])
 def get_books():
     books = Book.query.all()
     return jsonify([{
         "id": b.id,
         "title": b.title,
         "author": b.author,
-        "genre": b.genre,
-        "year": b.year
+        "rating": b.rating
     } for b in books])
+
