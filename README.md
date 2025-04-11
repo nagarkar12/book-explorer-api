@@ -42,7 +42,7 @@ book_explorer_api/ ├── backend/ │ ├── app/ │ │ ├── init.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/book_explorer_api.git
+git clone https://github.com/nagarkar12/book_explorer_api.git
 
 # Navigate to backend folder
 cd book_explorer_api/backend
