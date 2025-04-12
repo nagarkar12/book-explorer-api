@@ -5,7 +5,9 @@ import os
 db = SQLAlchemy()
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, 
+                template_folder='../templates',
+                static_folder= '../static')
     basedir = os.path.abspath(os.path.dirname(__file__))
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../instance/book.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
