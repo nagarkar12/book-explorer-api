@@ -1,4 +1,4 @@
-const API_URL = "https://your-render-url.onrender.com/books"; // replace with your actual deployed API URL
+const API_URL = "https://book-explorer-api.onrender.com/books"; // replace with your actual deployed API URL
 
 async function fetchBooks() {
   try {
