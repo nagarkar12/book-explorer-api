@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS  # 👉 Add this line
 import os
 
 db = SQLAlchemy()
@@ -12,8 +11,6 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
-    
-    CORS(app)  # 👉 Add this line to enable CORS
 
     from .routes import register_routes
     register_routes(app)
