@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Book Explorer</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>Book Explorer</h1>
 
+  <input type="text" id="search" placeholder="Search books..." />
+
+  <ul id="bookList">Loading books...</ul>
+
+  <h2>Add New Book</h2>
   <form id="addBookForm">
-    <input type="text" id="title" placeholder="Title" required>
-    <input type="text" id="author" placeholder="Author" required>
-    <input type="number" id="year" placeholder="Year" required>
-    <input type="text" id="description" placeholder="Description">
-    <input type="text" id="genre" placeholder="Genre">
+    <input type="text" id="title" placeholder="Title" required><br>
+    <input type="text" id="author" placeholder="Author" required><br>
+    <input type="number" id="year" placeholder="Year" required><br>
+    <input type="text" id="genre" placeholder="Genre"><br>
+    <textarea id="description" placeholder="Description"></textarea><br>
     <button type="submit">Add Book</button>
   </form>
 
-  <input type="text" id="search" placeholder="Search by title or author...">
-
-  <ul id="bookList"></ul>
-
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="script.js"></script>
 </body>
 </html>

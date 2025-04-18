@@ -1,4 +1,5 @@
-const BASE_URL = 'https://book-explorer-api.onrender.com'; // Replace with your Render or localhost URL
+// script.js
+const BASE_URL = 'https://book-explorer-api.onrender.com';  // Replace with your deployed backend URL
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchBooks();
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (res.ok) {
       alert("Book added!");
+      document.getElementById("addBookForm").reset();
       fetchBooks();
     } else {
       alert("Failed to add book");
@@ -34,11 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchBooks(query = "") {
   try {
-    const res = await fetch(`${BASE_URL}/books?q=${query}`);
+    const res = await fetch(`${BASE_URL}/books`);
     const books = await res.json();
+    const filteredBooks = books.filter(book =>
+      book.title.toLowerCase().includes(query.toLowerCase()) ||
+      book.author.toLowerCase().includes(query.toLowerCase())
+    );
     const list = document.getElementById("bookList");
     list.innerHTML = "";
-    books.forEach(book => {
+    filteredBooks.forEach(book => {
       const li = document.createElement("li");
       li.innerHTML = `<strong>${book.title}</strong> by ${book.author} (${book.year})<br>
                       <em>${book.genre}</em><br>
