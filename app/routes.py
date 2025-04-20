@@ -16,7 +16,14 @@ def get_books():
 @book_routes.route('/books', methods=['POST'])
 def add_book():
     data = request.get_json()
-    new_book = Book(title=data['title'], author=data['author'])
+    new_book = Book(
+        title=data['title'],
+        author=data['author'],
+        description=data.get('description'),
+        published_year=data.get('published_year'),
+        genre=data.get('genre'),
+        isbn=data.get('isbn')
+    )
     db.session.add(new_book)
     db.session.commit()
     return jsonify(new_book.to_dict()), 201
