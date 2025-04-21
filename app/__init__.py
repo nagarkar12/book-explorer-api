@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS  
+from flask_cors import CORS
 
 db = SQLAlchemy()
 
@@ -15,5 +15,9 @@ def create_app():
 
     from .routes import book_routes
     app.register_blueprint(book_routes)
+
+    
+    with app.app_context():
+        db.create_all()
 
     return app
